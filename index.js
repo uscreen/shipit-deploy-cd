@@ -1,5 +1,5 @@
 const deploy = require('./lib/deploy')
 
-module.exports = shipit => {
-  deploy(shipit)
+module.exports = (shipit, taskname = 'deploy-cd') => {
+  deploy(shipit, taskname)
 }
