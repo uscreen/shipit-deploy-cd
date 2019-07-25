@@ -1,6 +1,6 @@
 {
   "name": "@uscreen.de/shipit-deploy-cd",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "shipit deploy without git",
   "main": "index.js",
   "repository": "git@gitlab.uscreen.net:uscreen/npm-shipit-deploy-cd.git",
@@ -8,7 +8,6 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
-    "moment": "^2.22.2",
     "path": "^0.12.7",
     "shipit-utils": "^1.4.0"
   },
