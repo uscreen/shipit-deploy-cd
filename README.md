@@ -1,6 +1,6 @@
 # shipit-deploy-cd
 
-[![CircleCI](https://circleci.com/gh/uscreen/shipit-deploy-cd.svg?style=svg)](https://circleci.com/gh/uscreen/shipit-deploy-cd)
+[![CircleCI](https://circleci.com/gh/uscreen/shipit-deploy-cd.svg?style=svg)](https://circleci.com/gh/uscreen/shipit-deploy-cd) [![Greenkeeper badge](https://badges.greenkeeper.io/uscreen/shipit-deploy-cd.svg)](https://greenkeeper.io/)
 
 > A shipit deployment task without git requirements. 
 
