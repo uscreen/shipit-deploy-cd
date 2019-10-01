@@ -1,6 +1,6 @@
 # shipit-deploy-cd
 
-[![Build Status](https://travis-ci.org/uscreen/shipit-deploy-cd.svg?branch=master)](https://travis-ci.org/uscreen/shipit-deploy-cd)
+[![CircleCI](https://circleci.com/gh/uscreen/shipit-deploy-cd.svg?style=svg)](https://circleci.com/gh/uscreen/shipit-deploy-cd)
 
 > A shipit deployment task without git requirements. 
 
