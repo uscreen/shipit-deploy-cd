@@ -1,5 +1,7 @@
 # shipit-deploy-cd
 
+[![Build Status](https://travis-ci.org/uscreen/shipit-deploy-cd.svg?branch=master)](https://travis-ci.org/uscreen/shipit-deploy-cd)
+
 > A shipit deployment task without git requirements. 
 
 Task is to just copy some local artefacts to a remote location. This is esp. usefull in Continous-Delivery-Scenarios. And that's why the package appended `cd`. It's using `rsync` under the hood to only transfer changes and keeps a capristrano like directory structure:
