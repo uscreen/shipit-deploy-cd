@@ -14,7 +14,7 @@
     "test-coverage": "nyc --report-dir=coverage --reporter=html mocha"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^3.0.0",
     "path": "^0.12.7",
     "shipit-utils": "^1.4.0"
   },
