@@ -795,17 +795,17 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-prettier@^6.10.0:
-  version "6.10.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.10.0.tgz#7b15e303bf9c956875c948f6b21500e48ded6a7f"
-  integrity sha512-AtndijGte1rPILInUdHjvKEGbIV06NuvPrqlIEaEaWtbtvJh464mDeyGMdZEQMsGvC0ZVkiex1fSNcC4HAbRGg==
+eslint-config-prettier@^6.10.1:
+  version "6.10.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.10.1.tgz#129ef9ec575d5ddc0e269667bf09defcd898642a"
+  integrity sha512-svTy6zh1ecQojvpbJSgH3aei/Rt7C6i090l5f2WQ4aB05lYHeZIR1qL4wZyyILTbtmnbHP5Yn8MrsOJMGa8RkQ==
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-standard@^14.1.0:
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-14.1.0.tgz#b23da2b76fe5a2eba668374f246454e7058f15d4"
-  integrity sha512-EF6XkrrGVbvv8hL/kYa/m6vnvmUT+K82pJJc4JJVMM6+Qgqh0pnwprSxdduDLB9p/7bIxD+YV5O0wfb8lmcPbA==
+eslint-config-standard@^14.1.1:
+  version "14.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-14.1.1.tgz#830a8e44e7aef7de67464979ad06b406026c56ea"
+  integrity sha512-Z9B+VR+JIXRxz21udPTL9HpFMyoMUEeX1G251EQ6e05WD9aPVtVBn09XUmZ259wCMlCDmYDSZG62Hhm+ZTJcUg==
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.3"
@@ -2485,10 +2485,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.0.tgz#9c8fdba0aeae3faf0d9d9391623ac4f9321a4455"
-  integrity sha512-vI55PC+GFLOVtpwr2di1mYhJF36v+kztJov8sx3AmqbfdA+2Dhozxb+3e1hTgoV9lyhnVJFF3Z8GCVeMBOS1bA==
+prettier@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.2.tgz#1ba8f3eb92231e769b7fcd7cb73ae1b6b74ade08"
+  integrity sha512-5xJQIPT8BraI7ZnaDwSbu5zLrB6vvi8hVV58yHQ+QK64qrY40dULy0HSRlQ2/2IdzeBpjhDkqdcFBnFeDEMVdg==
 
 pretty-hrtime@^1.0.0:
   version "1.0.3"
@@ -2747,10 +2747,10 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shipit-cli@^5.1.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/shipit-cli/-/shipit-cli-5.2.0.tgz#5031b685347eb0f45336481bc056ccee39b36ffb"
-  integrity sha512-M8ZdABHqWH2QxYUq/FRvIuLX4oQFRRHPS3HgX/zPrwLcA4MNb++gYsu+UfTjDGgqq0FOu2EtQK2pQWnYJU4Cog==
+shipit-cli@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/shipit-cli/-/shipit-cli-5.3.0.tgz#adcbc02a928bbaa2ef2d9dc7f554b1e5b7f37494"
+  integrity sha512-8T7TPiq43Rm5N7soLkgOisALat0oP9Yvz45nIHjPX8m/WeJ4llIjUBUF3+EJ9el7CKMxc7taTzr7/GaiDQsIZg==
   dependencies:
     chalk "^2.4.1"
     commander "^3.0.0"
@@ -2758,7 +2758,7 @@ shipit-cli@^5.1.0:
     liftoff "^3.1.0"
     orchestrator "^0.3.7"
     pretty-hrtime "^1.0.0"
-    ssh-pool "^5.2.0"
+    ssh-pool "^5.3.0"
     stream-line-wrapper "^0.1.1"
     v8flags "^3.1.0"
 
@@ -2907,10 +2907,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-ssh-pool@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/ssh-pool/-/ssh-pool-5.2.0.tgz#06dc04ad6a588067f44bcc6e263ceabfe002c113"
-  integrity sha512-CmfL402X+KPaMQLohh6nmQGsRHEQocaoxyYTTBp+/50ixXNY3OJudikipF+NU1gAijnqzei3D5TZ+sfii/myhg==
+ssh-pool@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/ssh-pool/-/ssh-pool-5.3.0.tgz#253b8a900e61266e2b7b9a150246c36d62bc077d"
+  integrity sha512-ViI4nHWNqPzBdz7UjQwYQHC8MPRpAtj0dostvSCJqhdAKAgOUD5XZbTc7JhERVDR+DQa/eHG3EymGorKiqz02w==
   dependencies:
     stream-line-wrapper "^0.1.1"
     tmp "^0.1.0"
