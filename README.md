@@ -1,6 +1,6 @@
 # shipit-deploy-cd
 
-![Travis (.com)](https://img.shields.io/travis/com/uscreen/shipit-deploy-cd) [![Greenkeeper badge](https://badges.greenkeeper.io/uscreen/shipit-deploy-cd.svg)](https://greenkeeper.io/)
+![Travis (.com)](https://img.shields.io/travis/com/uscreen/shipit-deploy-cd) [![Known Vulnerabilities](https://snyk.io/test/github/uscreen/shipit-deploy-cd/badge.svg?targetFile=package.json)](https://snyk.io/test/github/uscreen/shipit-deploy-cd?targetFile=package.json)
 
 > A shipit deployment task without git requirements. 
 
