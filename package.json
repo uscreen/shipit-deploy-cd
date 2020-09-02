@@ -1,6 +1,6 @@
 {
   "name": "@uscreen.de/shipit-deploy-cd",
-  "version": "0.4.20",
+  "version": "0.4.21",
   "description": "shipit deploy without git",
   "main": "index.js",
   "repository": {
