@@ -1,6 +1,7 @@
 # shipit-deploy-cd
 
-![Travis (.com)](https://img.shields.io/travis/com/uscreen/shipit-deploy-cd) [![Known Vulnerabilities](https://snyk.io/test/github/uscreen/shipit-deploy-cd/badge.svg?targetFile=package.json)](https://snyk.io/test/github/uscreen/shipit-deploy-cd?targetFile=package.json)
+[![Build Status](https://travis-ci.com/uscreen/shipit-deploy-cd.svg?branch=master)](https://travis-ci.com/uscreen/shipit-deploy-cd)
+[![Known Vulnerabilities](https://snyk.io/test/github/uscreen/shipit-deploy-cd/badge.svg?targetFile=package.json)](https://snyk.io/test/github/uscreen/shipit-deploy-cd?targetFile=package.json)
 
 > A shipit deployment task without git requirements. 
 
