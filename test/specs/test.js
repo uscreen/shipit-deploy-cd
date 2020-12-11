@@ -4,7 +4,7 @@ const Shipit = require('shipit-cli')
 const deploy = require('../../lib/deploy')
 let shipit // local-to-test temporary variable
 describe('shipit-deploy-cd', () => {
-  beforeEach(function() {
+  beforeEach(function () {
     shipit = new Shipit({
       environment: 'test',
       log: sinon.stub()
@@ -13,7 +13,7 @@ describe('shipit-deploy-cd', () => {
     deploy(shipit)
   })
 
-  it('should have registered with default task name', done => {
+  it('should have registered with default task name', (done) => {
     expect(shipit.tasks['deploy-cd']).to.exist
     done()
   })
