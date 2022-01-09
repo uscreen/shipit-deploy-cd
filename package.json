@@ -23,7 +23,7 @@
     "shipit-cli": ">=4.1.0"
   },
   "devDependencies": {
-    "@uscreen.de/eslint-config-prettystandard-node": "^0.2.0",
+    "@uscreen.de/eslint-config-prettystandard-node": "^0.2.1",
     "chai": "^4.2.0",
     "eslint-plugin-mocha": "^10.0.3",
     "mocha": "^9.1.3",
