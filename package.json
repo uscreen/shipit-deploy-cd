@@ -19,6 +19,7 @@
     "*.js": "eslint --cache --fix"
   },
   "dependencies": {
+    "@uscreen.de/dev-service": "^0.11.17",
     "c8": "^7.11.3",
     "chalk": "^4.0.0",
     "path": "^0.12.7",
@@ -36,5 +37,21 @@
   },
   "resolutions": {
     "stream-line-wrapper": "git+https://github.com/uscreen/stream-line-wrapper.git"
-  }
+  },
+  "services": [
+    {
+      "build": "../sshd",
+      "image": "uscreen.de/shipit-deploy-cd/test-sshd",
+      "environment": {
+        "SSH_USERS": "www:1001:1001"
+      },
+      "ports": [
+        "2222:22"
+      ],
+      "volumes": [
+        "../sshd/ssh_keys:/etc/ssh/keys:ro",
+        "../sshd/authorized_keys/www:/etc/authorized_keys/www:ro"
+      ]
+    }
+  ]
 }
