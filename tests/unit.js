@@ -14,7 +14,7 @@ tap.beforeEach(() => {
   deploy(shipit)
 })
 
-tap.test('shipit-deploy-cd', async (t) => {
+tap.test('Registering shipit-deploy-cd task', async (t) => {
   t.ok(
     shipit.tasks['deploy-cd'],
     'should have registered with default task name'
