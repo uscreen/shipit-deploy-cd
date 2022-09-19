@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@uscreen.de/dev-service": "^0.11.19",
-    "@uscreen.de/eslint-config-prettystandard-node": "^0.2.8",
+    "@uscreen.de/eslint-config-prettystandard-node": "^0.2.10",
     "husky": "^8.0.1",
     "shipit-cli": "^5.3.0",
     "sinon": "^14.0.0"
