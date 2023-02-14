@@ -12,6 +12,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint '**/*.js' --fix",
+    "testhost:start": "docker run -d --rm -e AUTHORIZED_KEYS=\"$(cat ~/.ssh/*.pub)\" -p 2222:22 --name shipit-deploy-cd-testhost $(docker build -q ./tests)",
+    "testhost:stop": "docker stop shipit-deploy-cd-testhost",
     "test": "c8 tap",
     "test:cov": "c8 -r html -r text tap",
     "prepare": "husky install"
@@ -31,7 +33,6 @@
     "shipit-cli": ">=4.1.0"
   },
   "devDependencies": {
-    "@uscreen.de/dev-service": "^0.11.19",
     "@uscreen.de/eslint-config-prettystandard-node": "^0.2.10",
     "husky": "^8.0.1",
     "shipit-cli": "^5.3.0",
@@ -39,21 +40,5 @@
   },
   "resolutions": {
     "stream-line-wrapper": "git+https://github.com/uscreen/stream-line-wrapper.git"
-  },
-  "services": [
-    {
-      "build": "../sshd",
-      "image": "uscreen.de/shipit-deploy-cd/test-sshd",
-      "environment": {
-        "SSH_USERS": "www:1001:1001"
-      },
-      "ports": [
-        "2222:22"
-      ],
-      "volumes": [
-        "../sshd/ssh_keys:/etc/ssh/keys:ro",
-        "../sshd/authorized_keys/www:/etc/authorized_keys/www:ro"
-      ]
-    }
-  ]
+  }
 }

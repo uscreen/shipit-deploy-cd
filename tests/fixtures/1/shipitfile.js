@@ -8,7 +8,7 @@ module.exports = (shipit) => {
   shipit.initConfig({
     default: {
       dist: 'dist/*',
-      deployTo: `/home/www/${name}`,
+      deployTo: `/root/${name}`,
       keepReleases: 3
     },
 

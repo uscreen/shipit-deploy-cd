@@ -5,7 +5,7 @@ const { exec } = require('child_process')
 // avoid problems converting strings/dates:
 process.env.TZ = 'utc'
 
-const remoteHost = 'www@shipit-deploy-cd-test.uscreen.me:2222'
+const remoteHost = 'root@shipit-deploy-cd-test.uscreen.me:2222'
 
 const cli = (cmd, cwd, env, timeout) => {
   env = { ...process.env, ...env }

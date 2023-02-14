@@ -99,34 +99,25 @@ Following workflow task events are emitted:
 
 ## Tests
 
-For testing we use the package [dev-service](https://www.npmjs.com/package/@uscreen.de/dev-service) to run an sshd service we can deploy to.
+We use Docker to create a host that shipit-deploy-cd can deploy to during testing.
 
-To use dev-service, you need docker & docker-compose in your PATH (e.g. via [Docker Desktop](https://www.docker.com/products/docker-desktop/)). With [direnv](https://direnv.net/) dev-service is automatically added to you PATH as long as you reside inside the shipit-deploy-cd folder.
+To start the test host, just run
 
-To prepare, copy your public ssh key into _services/sshd/authorized_keys/www_, e.g. with:
+    yarn testhost:start
 
-    cp ~/.ssh/id_rsa.pub services/sshd/authorized_keys/www
-
-Next adjust the host keys' permissions to be only accessible for the owner:
-
-    chmod 600 services/sshd/ssh_keys/*
-
-Now use dev-service to install & start the sshd service:
-
-    service install
-    service start
+Attention: Your public SSH keys are read from `~/.ssh/*.pub` and transferred to the test host. This is done to allow shipit-deploy-cd to connect to the test host during the tests.
 
 Before you run the tests first time, you may find it useful to ssh to the service once to confirm the authenticity of the used host:
 
-    ssh www@shipit-deploy-cd-test.uscreen.me -p 2222
+    ssh root@shipit-deploy-cd-test.uscreen.me -p 2222
 
-Run the tests by
+Run the tests with
 
     yarn test
 
-Afterwards, stop the sshd service by
+Stop the test host by
 
-    service stop
+    yarn testhost:stop
 
 ## Roadmap
 
