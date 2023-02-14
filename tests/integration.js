@@ -96,7 +96,7 @@ tap.test('Deploying multiple times', async (t) => {
     t.equal(
       1,
       releasesEntries.length,
-      'should have  one entry inside "releases"'
+      'should have one entry inside "releases"'
     )
 
     const [newRelease] = releasesEntries.sort(byDesc('name'))
