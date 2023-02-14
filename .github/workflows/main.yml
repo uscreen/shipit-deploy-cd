@@ -52,6 +52,11 @@ jobs:
       - name: Stop & remove testhost
         run: docker stop shipit-deploy-cd-testhost
 
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
   automerge:
     if: >
         github.event_name == 'pull_request' &&

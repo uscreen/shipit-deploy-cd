@@ -1,7 +1,9 @@
 # shipit-deploy-cd
 
-[![Build Status](https://travis-ci.com/uscreen/shipit-deploy-cd.svg?branch=master)](https://travis-ci.com/uscreen/shipit-deploy-cd)
+[![Test CI](https://github.com/uscreen/shipit-deploy-cd/actions/workflows/main.yml/badge.svg)](https://github.com/uscreen/shipit-deploy-cd/actions/workflows/main.yml)
+[![Test Coverage](https://coveralls.io/repos/github/uscreen/shipit-deploy-cd/badge.svg?branch=master)](https://coveralls.io/github/uscreen/shipit-deploy-cd?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/uscreen/shipit-deploy-cd/badge.svg?targetFile=package.json)](https://snyk.io/test/github/uscreen/shipit-deploy-cd?targetFile=package.json)
+[![NPM Version](https://badge.fury.io/js/@uscreen.de%2Fshipit-deploy-cd.svg)](https://badge.fury.io/js/@uscreen.de%2Fshipit-deploy-cd)
 
 > A shipit deployment task without git requirements. 
 
