@@ -30,12 +30,7 @@ jobs:
           END
 
       - name: Start testhost
-        run: |
-          docker run -d --rm \
-          -e AUTHORIZED_KEYS="$(cat ~/.ssh/*.pub)" \
-          -p 2222:22 \
-          --name shipit-deploy-cd-testhost \
-          $(docker build -q ./tests)
+        run: yarn testhost:start
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -50,7 +45,7 @@ jobs:
         run: npm run test:ci
 
       - name: Stop & remove testhost
-        run: docker stop shipit-deploy-cd-testhost
+        run: yarn testhost:stop
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
