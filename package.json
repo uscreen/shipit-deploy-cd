@@ -37,7 +37,7 @@
     "@uscreen.de/eslint-config-prettystandard-node": "^0.2.10",
     "husky": "^8.0.1",
     "shipit-cli": "^5.3.0",
-    "sinon": "^16.0.0"
+    "sinon": "^17.0.0"
   },
   "resolutions": {
     "stream-line-wrapper": "git+https://github.com/uscreen/stream-line-wrapper.git"
