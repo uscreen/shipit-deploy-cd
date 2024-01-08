@@ -23,7 +23,7 @@
     "*.js": "eslint --cache --fix"
   },
   "dependencies": {
-    "c8": "^8.0.0",
+    "c8": "^9.0.0",
     "chalk": "^4.0.0",
     "path": "^0.12.7",
     "shipit-utils": "^1.4.0",
