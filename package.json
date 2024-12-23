@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "c8": "^10.0.0",
-    "chalk": "^4.0.0",
+    "chalk": "^5.4.1",
     "path": "^0.12.7",
     "shipit-utils": "^1.4.0",
     "stream-line-wrapper": "git+https://github.com/uscreen/stream-line-wrapper.git",
