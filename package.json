@@ -16,11 +16,7 @@
     "testhost:stop": "docker stop shipit-deploy-cd-testhost",
     "test": "c8 tap",
     "test:cov": "c8 -r html -r text tap",
-    "test:ci": "c8 --reporter=lcovonly tap",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "test:ci": "c8 --reporter=lcovonly tap"
   },
   "dependencies": {
     "c8": "^10.0.0",
@@ -35,7 +31,6 @@
   },
   "devDependencies": {
     "@uscreen.de/eslint-config-prettystandard-node": "^0.2.10",
-    "husky": "^9.0.7",
     "shipit-cli": "^5.3.0",
     "sinon": "^19.0.2"
   },
