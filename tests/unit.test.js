@@ -1,11 +1,12 @@
-const tap = require('tap')
+const { test, beforeEach } = require('node:test')
+const assert = require('node:assert')
 const sinon = require('sinon')
 const Shipit = require('shipit-cli')
 const deploy = require('../lib/deploy')
 
 let shipit // local-to-test temporary variable
 
-tap.beforeEach(() => {
+beforeEach(() => {
   shipit = new Shipit({
     environment: 'test',
     log: sinon.stub()
@@ -14,11 +15,9 @@ tap.beforeEach(() => {
   deploy(shipit)
 })
 
-tap.test('Registering shipit-deploy-cd task', async (t) => {
-  t.ok(
+test('Registering shipit-deploy-cd task', async () => {
+  assert.ok(
     shipit.tasks['deploy-cd'],
     'should have registered with default task name'
   )
-
-  t.end()
 })

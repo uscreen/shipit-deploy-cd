@@ -1,4 +1,5 @@
-const tap = require('tap')
+const { describe, test, before } = require('node:test')
+const assert = require('node:assert')
 const path = require('path')
 const {
   cli,
@@ -65,23 +66,23 @@ const releaseTreesExpected = [
   ]
 ]
 
-tap.test('Deploying multiple times', async (t) => {
-  t.before(() => resetRemoteFiles(remoteHost))
+describe('Deploying multiple times', () => {
+  before(() => resetRemoteFiles(remoteHost))
 
   const previousReleases = []
 
-  t.test('Executing first deployment', async (t) => {
+  test('Executing first deployment', async () => {
     const cwd = path.resolve(__dirname, 'fixtures/1')
     const shipitResult = await cli('shipit stage deploy', cwd)
-    t.equal(0, shipitResult.code, 'should return code 0')
+    assert.strictEqual(shipitResult.code, 0, 'should return code 0')
 
     /**
      * check root
      */
     const rootTree = await getRemoteTree(remoteHost, '.', 2)
-    t.same(
-      rootTreeExpected,
+    assert.deepStrictEqual(
       rootTree,
+      rootTreeExpected,
       'should have created the correct folder structure'
     )
 
@@ -93,15 +94,15 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject/releases'
     )
 
-    t.equal(
-      1,
+    assert.strictEqual(
       releasesEntries.length,
+      1,
       'should have one entry inside "releases"'
     )
 
     const [newRelease] = releasesEntries.sort(byDesc('name'))
 
-    t.ok(
+    assert.ok(
       newRelease.name.match(/^\d{14}$/),
       '... entry should be a folder appropriately named'
     )
@@ -122,9 +123,9 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject'
     )
 
-    t.equal(
-      `releases/${newRelease.name}`,
+    assert.strictEqual(
       testprojectEntries.find(nameIs('current')).target,
+      `releases/${newRelease.name}`,
       'should link "current" to newest folder inside folder "releases"'
     )
 
@@ -135,27 +136,27 @@ tap.test('Deploying multiple times', async (t) => {
       remoteHost,
       `./testproject/releases/${newRelease.name}`
     )
-    t.same(
-      releaseTreesExpected[0],
+    assert.deepStrictEqual(
       newReleaseTree,
+      releaseTreesExpected[0],
       'should have copied local folder "dist" to "current"'
     )
 
     previousReleases.push(newRelease)
   })
 
-  t.test('Executing second deployment', async (t) => {
+  test('Executing second deployment', async () => {
     const cwd = path.resolve(__dirname, 'fixtures/2')
     const shipitResult = await cli('shipit stage deploy', cwd)
-    t.equal(0, shipitResult.code, 'should return code 0')
+    assert.strictEqual(shipitResult.code, 0, 'should return code 0')
 
     /**
      * check root
      */
     const rootTree = await getRemoteTree(remoteHost, '.', 2)
-    t.same(
-      rootTreeExpected,
+    assert.deepStrictEqual(
       rootTree,
+      rootTreeExpected,
       'should not have changed folder structure'
     )
 
@@ -167,15 +168,15 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject/releases'
     )
 
-    t.equal(
-      2,
+    assert.strictEqual(
       releasesEntries.length,
+      2,
       'should have two entries inside "releases"'
     )
 
     const [newRelease, ...other] = releasesEntries.sort(byDesc('name'))
 
-    t.ok(
+    assert.ok(
       newRelease.name.match(/^\d{14}$/),
       '... entry should be a folder appropriately named'
     )
@@ -187,9 +188,9 @@ tap.test('Deploying multiple times', async (t) => {
     //   ),
     //   "... entry's name should correspond to entry's timestamp"
     // )
-    t.same(
-      previousReleases.map((r) => r.name).sort(),
+    assert.deepStrictEqual(
       other.map((r) => r.name).sort(),
+      previousReleases.map((r) => r.name).sort(),
       'should have kept old releases'
     )
 
@@ -201,9 +202,9 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject'
     )
 
-    t.equal(
-      `releases/${newRelease.name}`,
+    assert.strictEqual(
       testprojectEntries.find(nameIs('current')).target,
+      `releases/${newRelease.name}`,
       'should link "current" to newest folder inside folder "releases"'
     )
 
@@ -214,9 +215,9 @@ tap.test('Deploying multiple times', async (t) => {
       remoteHost,
       `./testproject/releases/${newRelease.name}`
     )
-    t.same(
-      releaseTreesExpected[1],
+    assert.deepStrictEqual(
       newReleaseTree,
+      releaseTreesExpected[1],
       'should have copied local folder "dist" to "current"'
     )
 
@@ -229,9 +230,9 @@ tap.test('Deploying multiple times', async (t) => {
         remoteHost,
         `./testproject/releases/${release.name}`
       )
-      t.same(
-        releaseTreesExpected[i],
+      assert.deepStrictEqual(
         releaseTree,
+        releaseTreesExpected[i],
         `should not have changed old release ${release.name}`
       )
     }
@@ -239,18 +240,18 @@ tap.test('Deploying multiple times', async (t) => {
     previousReleases.push(newRelease)
   })
 
-  t.test('Executing third deployment', async (t) => {
+  test('Executing third deployment', async () => {
     const cwd = path.resolve(__dirname, 'fixtures/3')
     const shipitResult = await cli('shipit stage deploy', cwd)
-    t.equal(0, shipitResult.code, 'should return code 0')
+    assert.strictEqual(shipitResult.code, 0, 'should return code 0')
 
     /**
      * check root
      */
     const rootTree = await getRemoteTree(remoteHost, '.', 2)
-    t.same(
-      rootTreeExpected,
+    assert.deepStrictEqual(
       rootTree,
+      rootTreeExpected,
       'should not have changed folder structure'
     )
 
@@ -262,15 +263,15 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject/releases'
     )
 
-    t.equal(
-      3,
+    assert.strictEqual(
       releasesEntries.length,
+      3,
       'should have three entries inside "releases"'
     )
 
     const [newRelease, ...other] = releasesEntries.sort(byDesc('name'))
 
-    t.ok(
+    assert.ok(
       newRelease.name.match(/^\d{14}$/),
       '... entry should be a folder appropriately named'
     )
@@ -282,9 +283,9 @@ tap.test('Deploying multiple times', async (t) => {
     //   ),
     //   "... entry's name should correspond to entry's timestamp"
     // )
-    t.same(
-      previousReleases.map((r) => r.name).sort(),
+    assert.deepStrictEqual(
       other.map((r) => r.name).sort(),
+      previousReleases.map((r) => r.name).sort(),
       'should have kept old releases'
     )
 
@@ -296,9 +297,9 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject'
     )
 
-    t.equal(
-      `releases/${newRelease.name}`,
+    assert.strictEqual(
       testprojectEntries.find(nameIs('current')).target,
+      `releases/${newRelease.name}`,
       'should link "current" to newest folder inside folder "releases"'
     )
 
@@ -309,9 +310,9 @@ tap.test('Deploying multiple times', async (t) => {
       remoteHost,
       `./testproject/releases/${newRelease.name}`
     )
-    t.same(
-      releaseTreesExpected[2],
+    assert.deepStrictEqual(
       newReleaseTree,
+      releaseTreesExpected[2],
       'should have copied local folder "dist" to "current"'
     )
 
@@ -324,9 +325,9 @@ tap.test('Deploying multiple times', async (t) => {
         remoteHost,
         `./testproject/releases/${release.name}`
       )
-      t.same(
-        releaseTreesExpected[i],
+      assert.deepStrictEqual(
         releaseTree,
+        releaseTreesExpected[i],
         `should not have changed old release ${release.name}`
       )
     }
@@ -334,18 +335,18 @@ tap.test('Deploying multiple times', async (t) => {
     previousReleases.push(newRelease)
   })
 
-  t.test('Executing fourth deployment', async (t) => {
+  test('Executing fourth deployment', async () => {
     const cwd = path.resolve(__dirname, 'fixtures/4')
     const shipitResult = await cli('shipit stage deploy', cwd)
-    t.equal(0, shipitResult.code, 'should return code 0')
+    assert.strictEqual(shipitResult.code, 0, 'should return code 0')
 
     /**
      * check root
      */
     const rootTree = await getRemoteTree(remoteHost, '.', 2)
-    t.same(
-      rootTreeExpected,
+    assert.deepStrictEqual(
       rootTree,
+      rootTreeExpected,
       'should not have changed folder structure'
     )
 
@@ -357,15 +358,15 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject/releases'
     )
 
-    t.equal(
-      3,
+    assert.strictEqual(
       releasesEntries.length,
+      3,
       'should still have three entries inside "releases"'
     )
 
     const [newRelease, ...other] = releasesEntries.sort(byDesc('name'))
 
-    t.ok(
+    assert.ok(
       newRelease.name.match(/^\d{14}$/),
       '... entry should be a folder appropriately named'
     )
@@ -378,12 +379,12 @@ tap.test('Deploying multiple times', async (t) => {
     //   ),
     //   "... entry's name should correspond to entry's timestamp"
     // )
-    t.same(
+    assert.deepStrictEqual(
+      other.map((r) => r.name).sort(),
       previousReleases
         .map((r) => r.name)
         .sort()
         .slice(-2),
-      other.map((r) => r.name).sort(),
       'should have removed the oldest release'
     )
 
@@ -395,9 +396,9 @@ tap.test('Deploying multiple times', async (t) => {
       './testproject'
     )
 
-    t.equal(
-      `releases/${newRelease.name}`,
+    assert.strictEqual(
       testprojectEntries.find(nameIs('current')).target,
+      `releases/${newRelease.name}`,
       'should link "current" to newest folder inside folder "releases"'
     )
 
@@ -408,9 +409,9 @@ tap.test('Deploying multiple times', async (t) => {
       remoteHost,
       `./testproject/releases/${newRelease.name}`
     )
-    t.same(
-      releaseTreesExpected[3],
+    assert.deepStrictEqual(
       newReleaseTree,
+      releaseTreesExpected[3],
       'should have copied local folder "dist" to "current"'
     )
 
@@ -423,9 +424,9 @@ tap.test('Deploying multiple times', async (t) => {
         remoteHost,
         `./testproject/releases/${release.name}`
       )
-      t.same(
-        releaseTreesExpected[i],
+      assert.deepStrictEqual(
         releaseTree,
+        releaseTreesExpected[i],
         `should not have changed old release ${release.name}`
       )
     }

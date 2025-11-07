@@ -1,6 +1,0 @@
-{
-  "reporter": "spec",
-  "test-ignore": "^(tests/config.js|tests/fixture.*)$",
-  "coverage": false,
-  "check-coverage": false
-}
