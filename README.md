@@ -26,13 +26,13 @@ $ tree -L 2
 __a)__ Install all required packages in one shot:
 
 ```sh
-$ yarn add shipit-cli @uscreen.de/shipit-deploy-cd # or use npm -i
+$ pnpm add shipit-cli @uscreen.de/shipit-deploy-cd # or use npm -i
 ```
 
 __b)__ Or just add `shipit-deploy-cd` to any existing setup:
 
 ```sh
-$ yarn add @uscreen.de/shipit-deploy-cd # or use npm -i
+$ pnpm add @uscreen.de/shipit-deploy-cd # or use npm -i
 ```
 
 _...will yield if `shipit-cli` missing_
@@ -105,7 +105,7 @@ We use Docker to create a host that shipit-deploy-cd can deploy to during testin
 
 To start the test host, just run
 
-    yarn testhost:start
+    pnpm run testhost:start
 
 Attention: Your public SSH keys are read from `~/.ssh/*.pub` and transferred to the test host. This is done to allow shipit-deploy-cd to connect to the test host during the tests.
 
@@ -115,11 +115,11 @@ Before you run the tests first time, you may find it useful to ssh to the servic
 
 Run the tests with
 
-    yarn test
+    pnpm run test
 
 Stop the test host by
 
-    yarn testhost:stop
+    pnpm run testhost:stop
 
 ## Roadmap
 

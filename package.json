@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint '**/*.js' --fix",
+    "preinstall": "npx only-allow pnpm",
     "testhost:start": "docker run -d --rm -e AUTHORIZED_KEYS=\"$(cat ~/.ssh/*.pub)\" -p 2222:22 --name shipit-deploy-cd-testhost $(docker build -q ./tests)",
     "testhost:stop": "docker stop shipit-deploy-cd-testhost",
     "test": "c8 tap",
@@ -34,7 +35,10 @@
     "shipit-cli": "^5.3.0",
     "sinon": "^19.0.2"
   },
-  "resolutions": {
-    "stream-line-wrapper": "git+https://github.com/uscreen/stream-line-wrapper.git"
-  }
+  "pnpm": {
+    "overrides": {
+      "stream-line-wrapper": "git+https://github.com/uscreen/stream-line-wrapper.git"
+    }
+  },
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }
