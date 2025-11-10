@@ -32,7 +32,7 @@
   "devDependencies": {
     "@uscreen.de/eslint-config-prettystandard-node": "^0.2.12",
     "shipit-cli": "^5.3.0",
-    "sinon": "^19.0.5"
+    "sinon": "^21.0.0"
   },
   "pnpm": {
     "overrides": {
