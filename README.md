@@ -1,3 +1,9 @@
+#### ⚠️ Maintenance Notice
+
+**This package depends on shipit-cli as a peer dependency. Please note that shipit-cli appears to be no longer actively maintained — the last commit to the [shipit project](https://github.com/shipitjs/shipit) was made in 2020, the repository was archived by the owner in 2023. As a result, several security vulnerabilities have been identified in shipit-cli that can only be mitigated using dependency resolutions (yarn) or overrides (pnpm).**
+
+**Use at your own risk.**
+
 # shipit-deploy-cd
 
 [![Test CI](https://github.com/uscreen/shipit-deploy-cd/actions/workflows/main.yml/badge.svg)](https://github.com/uscreen/shipit-deploy-cd/actions/workflows/main.yml)
