@@ -30,7 +30,7 @@
     "shipit-cli": ">=4.1.0"
   },
   "devDependencies": {
-    "@uscreen.de/eslint-config-prettystandard-node": "^0.2.12",
+    "@uscreen.de/eslint-config-prettystandard-node": "^0.3.0",
     "shipit-cli": "^5.3.0",
     "sinon": "^19.0.5"
   },
