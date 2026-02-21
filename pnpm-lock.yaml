@@ -26,7 +26,7 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1
       stream-line-wrapper:
-        specifier: github:uscreen/stream-line-wrapper
+        specifier: git+https://github.com/uscreen/stream-line-wrapper.git
         version: https://codeload.github.com/uscreen/stream-line-wrapper/tar.gz/fc32cb8866a30c16593004060bb1c3be33fb7771
     devDependencies:
       '@uscreen.de/eslint-config-prettystandard-node':
