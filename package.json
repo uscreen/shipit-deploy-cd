@@ -19,6 +19,9 @@
     "test:cov": "c8 --reporter=html --reporter=text node --test",
     "test:ci": "c8 --reporter=lcov --reporter=text node --test"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "c8": "^10.1.3",
     "chalk": "^4.1.2",
